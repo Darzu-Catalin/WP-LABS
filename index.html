@@ -11,15 +11,15 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 antialiased">
     <!-- Header & Navigation -->
-    <header class="header">
-        <div class="container header-container">
+    <header class="header sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+        <div class="container header-container mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
             <a href="#" class="logo">
                 <img src="images/logo.jpg" alt="Asigvital" class="logo-img">
                 <span class="logo-text">Asigvital</span>
             </a>
-            <nav class="nav">
+            <nav class="nav hidden md:block">
                 <ul class="nav-list">
                     <li><a href="#acasa" class="nav-link">Acasă</a></li>
                     <li><a href="#asigurari" class="nav-link">Asigurări</a></li>
@@ -40,37 +40,37 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="acasa" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
+    <section id="acasa" class="hero flex min-h-[calc(100vh-76px)] items-center bg-gradient-to-br from-sky-50 via-white to-blue-100 py-16 md:py-24">
+        <div class="container hero-container mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+            <div class="hero-content space-y-6">
                 <span class="badge">Siguranță cu stil</span>
-                <h1 class="hero-title">Asigurări care reflectă calitatea vieții tale.</h1>
-                <p class="hero-text">Asigură-ți viitorul cu Asigvital - partenerul tău de încredere pe piața asigurărilor din Moldova. Protecție și siguranță pentru fiecare pas al drumului tău!</p>
-                <div class="hero-actions">
+                <h1 class="hero-title text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Asigurări care reflectă calitatea vieții tale.</h1>
+                <p class="hero-text max-w-xl text-base text-slate-600 md:text-lg">Asigură-ți viitorul cu Asigvital - partenerul tău de încredere pe piața asigurărilor din Moldova. Protecție și siguranță pentru fiecare pas al drumului tău!</p>
+                <div class="hero-actions flex flex-col gap-3 sm:flex-row">
                     <a href="mailto:asigvitalmoldova@gmail.com" class="btn btn-primary btn-large">Solicită o ofertă gratuită</a>
                     <a href="tel:+37379516908" class="btn btn-secondary btn-large">Sună acum</a>
                 </div>
-                <div class="hero-trust">
+                <div class="hero-trust flex flex-wrap gap-4 text-sm font-semibold text-slate-700">
                     <span>✓ Peste 17 ani de experiență</span>
                     <span>✓ Suport 24/7</span>
                 </div>
             </div>
-            <div class="hero-lottie">
+            <div class="hero-lottie mx-auto w-full max-w-xl">
                 <lottie-player src="Family Insurance.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="asigurari" class="services section">
-        <div class="container">
-            <div class="section-header">
+    <section id="asigurari" class="services section bg-white py-20">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="section-header mb-10 text-center md:mb-14">
                 <h2 class="section-title">Serviciile Noastre</h2>
                 <p class="section-subtitle">Alege asigurarea potrivită pentru tine și familia ta</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Service 1 -->
-                <div class="service-card">
+                <div class="service-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                     <div class="service-card-image" style="background-image: url('images/vehicle-card.jpg')"></div>
                     <div class="service-card-body">
                         <h3 class="service-title">Asigurări Auto</h3>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="service-card">
+                <div class="service-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                     <div class="service-card-image" style="background-image: url('images/person-card.jpg')"></div>
                     <div class="service-card-body">
                         <h3 class="service-title">Asigurări Persoane</h3>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="service-card">
+                <div class="service-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                     <div class="service-card-image" style="background-image: url('images/property-card.jpg')"></div>
                     <div class="service-card-body">
                         <h3 class="service-title">Asigurări Bunuri</h3>
@@ -133,12 +133,12 @@
     </section>
 
     <!-- Partners Section -->
-    <section class="partners section">
-        <div class="container">
-            <div class="section-header">
+    <section class="partners section bg-white py-20">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="section-header mb-10 text-center">
                 <h2 class="section-title">Parteneri</h2>
             </div>
-            <div class="partners-grid">
+            <div class="partners-grid grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
                 <div class="partner-item">
                     <img src="images/donaris.jpg" alt="Donaris Vienna Insurance Group">
                 </div>
@@ -156,13 +156,13 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="recenzii" class="testimonials section">
-        <div class="container">
-            <div class="section-header">
+    <section id="recenzii" class="testimonials section bg-slate-50 py-20">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="section-header mb-10 text-center">
                 <h2 class="section-title">Ce spun clienții noștri</h2>
                 <p class="section-subtitle">Peste 30,000 de moldoveni au ales siguranța alături de noi</p>
             </div>
-            <div class="carousel">
+            <div class="carousel mx-auto max-w-4xl">
                 <div class="carousel-track">
                     <div class="testimonial-card">
                         <div class="testimonial-quote">"Colaborarea cu Asigvital a fost o experiență extrem de plăcută. Am găsit asigurarea potrivită pentru nevoile mele, iar procesul de achiziție a fost simplu și rapid. Recomand cu încredere serviciile lor profesioniste."</div>
@@ -225,8 +225,8 @@
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="footer">
-        <div class="container footer-container">
+    <footer id="contact" class="footer bg-slate-900 text-slate-100">
+        <div class="container footer-container mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3 lg:px-8">
             <div class="footer-info">
                 <h3 class="footer-logo">Asigvital</h3>
                 <p class="footer-desc">Partenerul tău de încredere pe piața asigurărilor din Moldova. Oferim protecție și siguranță pentru fiecare pas al drumului tău.</p>
@@ -246,8 +246,8 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
+        <div class="footer-bottom border-t border-slate-700">
+            <div class="container mx-auto max-w-6xl px-4 py-5 text-center sm:px-6 lg:px-8">
                 <p>&copy; 2026 BAR Asigvital SRL. Toate drepturile rezervate.</p>
             </div>
         </div>

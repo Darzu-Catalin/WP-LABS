@@ -750,12 +750,12 @@ a:hover {
     gap: 10px;
     cursor: pointer;
     opacity: 0;
-    transform: translateY(22px) scale(0.92);
-    animation: mascot-enter 0.65s ease-out 2.4s forwards;
+    transform: translate(56px, 56px) scale(0.92);
+    animation: mascot-enter 0.75s cubic-bezier(0.2, 0.9, 0.25, 1) 2.4s forwards;
 }
 
 .mascot-bubble {
-    max-width: 220px;
+    max-width: 250px;
     padding: 10px 14px;
     border: 2px solid #2f80ed;
     border-radius: 14px;
@@ -777,8 +777,8 @@ a:hover {
 }
 
 .mascot-svg {
-    width: 92px;
-    height: 92px;
+    width: 132px;
+    height: 132px;
     filter: drop-shadow(0 8px 14px rgba(47, 128, 237, 0.26));
     transform-origin: center bottom;
     animation: mascot-bob 2.3s ease-in-out infinite;
@@ -791,11 +791,11 @@ a:hover {
 @keyframes mascot-enter {
     0% {
         opacity: 0;
-        transform: translateY(22px) scale(0.92);
+        transform: translate(56px, 56px) scale(0.92);
     }
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
     }
 }
 
@@ -826,8 +826,8 @@ a:hover {
     }
 
     .mascot-svg {
-        width: 74px;
-        height: 74px;
+        width: 98px;
+        height: 98px;
     }
 
     .mascot-bubble {
