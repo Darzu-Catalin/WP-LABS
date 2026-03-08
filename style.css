@@ -716,8 +716,6 @@ a:hover {
         display: none;
     }
     
-    }
-    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -739,3 +737,103 @@ a:hover {
         padding: 32px 20px;
     }
 }
+
+/* Mascot: insurance helper fixed in corner */
+.mascot-container {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+    animation: mascot-enter 0.65s ease-out 2.4s forwards;
+}
+
+.mascot-bubble {
+    max-width: 220px;
+    padding: 10px 14px;
+    border: 2px solid #2f80ed;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.35;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.mascot-container:hover .mascot-bubble {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.mascot-svg {
+    width: 92px;
+    height: 92px;
+    filter: drop-shadow(0 8px 14px rgba(47, 128, 237, 0.26));
+    transform-origin: center bottom;
+    animation: mascot-bob 2.3s ease-in-out infinite;
+}
+
+.mascot-container:hover .mascot-svg {
+    animation: mascot-hover 0.65s ease-in-out infinite;
+}
+
+@keyframes mascot-enter {
+    0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes mascot-bob {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(2deg);
+    }
+}
+
+@keyframes mascot-hover {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-7deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(7deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .mascot-container {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .mascot-svg {
+        width: 74px;
+        height: 74px;
+    }
+
+    .mascot-bubble {
+        max-width: 170px;
+        font-size: 0.8rem;
+        padding: 8px 11px;
+    }
+}
+
