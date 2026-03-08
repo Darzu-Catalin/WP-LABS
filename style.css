@@ -821,19 +821,42 @@ a:hover {
 
 @media (max-width: 768px) {
     .mascot-container {
-        right: 10px;
-        bottom: 10px;
+        right: calc(8px + env(safe-area-inset-right));
+        bottom: max(36px, calc(6px + env(safe-area-inset-bottom)));
+        gap: 6px;
     }
 
     .mascot-svg {
-        width: 98px;
-        height: 98px;
+        width: 82px;
+        height: 82px;
+        animation-duration: 2.8s;
     }
 
     .mascot-bubble {
-        max-width: 170px;
-        font-size: 0.8rem;
-        padding: 8px 11px;
+        max-width: 145px;
+        font-size: 0.72rem;
+        padding: 7px 9px;
+        line-height: 1.25;
+        border-width: 1px;
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.14);
+    }
+}
+
+@media (max-width: 420px) {
+    .mascot-container {
+        right: calc(6px + env(safe-area-inset-right));
+        bottom: max(30px, calc(4px + env(safe-area-inset-bottom)));
+    }
+
+    .mascot-svg {
+        width: 72px;
+        height: 72px;
+    }
+
+    .mascot-bubble {
+        max-width: 128px;
+        font-size: 0.68rem;
+        padding: 6px 8px;
     }
 }
 
