@@ -878,5 +878,14 @@ a:hover {
         font-size: 0.68rem;
         padding: 6px 8px;
     }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .phone-link {
+        font-size: 0.85rem;
+    }
 }
 
