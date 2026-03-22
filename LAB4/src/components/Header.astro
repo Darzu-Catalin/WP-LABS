@@ -1,0 +1,30 @@
+---
+import settings from '../data/settings.json';
+---
+
+<header class="header">
+  <div class="container header-container">
+    <a href="#" class="logo">
+      <img src="/images/logo.jpg" alt={settings.siteName} class="logo-img" />
+      <span class="logo-text">{settings.siteName}</span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#acasa" class="nav-link">Acasă</a></li>
+        <li><a href="#asigurari" class="nav-link">Asigurări</a></li>
+        <li><a href="#despre" class="nav-link">Despre Noi</a></li>
+        <li><a href="#recenzii" class="nav-link">Recenzii</a></li>
+      </ul>
+    </nav>
+    <div class="header-contact">
+      <a href={`tel:${settings.contact.phones[0]}`} class="phone-link">{settings.contact.phonesDisplay[0]}</a>
+      <a href="#contact" class="btn btn-primary">Contactează-ne</a>
+    </div>
+  </div>
+</header>
+
+{settings.contact.mobileBanner && (
+  <div class="mobile-banner">
+    {settings.contact.mobileBanner}
+  </div>
+)}
