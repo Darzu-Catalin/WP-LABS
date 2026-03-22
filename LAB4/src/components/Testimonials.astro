@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from 'astro:content';
+import settings from '../data/settings.json';
+
+const testimonials = (await getCollection('testimonials')).sort((a, b) => a.data.order - b.data.order);
+
+const renderedTestimonials = await Promise.all(
+  testimonials.map(async (t) => {
+    const { Content } = await render(t);
+    return { ...t, Content };
+  })
+);
+---
+
+<section id="recenzii" class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{settings.testimonials.title}</h2>
+      <p class="section-subtitle">{settings.testimonials.subtitle}</p>
+    </div>
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        {renderedTestimonials.map((testimonial) => (
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "<testimonial.Content />"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">{testimonial.data.initials}</div>
+              <div class="author-info">
+                <span class="author-name">{testimonial.data.author}</span>
+                <span class="author-role">{testimonial.data.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn carousel-prev" id="carouselPrev">&larr;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn carousel-next" id="carouselNext">&rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    const cards = track.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let current = 0;
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = index;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function moveCarousel(dir) {
+      let next = current + dir;
+      if (next < 0) next = cards.length - 1;
+      if (next >= cards.length) next = 0;
+      goTo(next);
+    }
+
+    prevBtn.addEventListener('click', () => moveCarousel(-1));
+    nextBtn.addEventListener('click', () => moveCarousel(1));
+
+    setInterval(() => moveCarousel(1), 5000);
+  });
+</script>
