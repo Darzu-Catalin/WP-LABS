@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "LAB4/public/images"
+public_folder: "/images"
+
+collections:
+  - name: "services"
+    label: "Servicii"
+    folder: "LAB4/src/content/services"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Imagine", name: "image", widget: "image" }
+      - { label: "Ordine", name: "order", widget: "number" }
+      - label: "Servicii oferite"
+        name: "items"
+        widget: "list"
+        field: { label: "Serviciu", name: "item", widget: "string" }
+
+  - name: "testimonials"
+    label: "Recenzii"
+    folder: "LAB4/src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Autor", name: "author", widget: "string" }
+      - { label: "Rol", name: "role", widget: "string" }
+      - { label: "Inițiale", name: "initials", widget: "string" }
+      - { label: "Ordine", name: "order", widget: "number" }
+      - { label: "Recenzie", name: "body", widget: "text" }
+
+  - name: "partners"
+    label: "Parteneri"
+    folder: "LAB4/src/content/partners"
+    create: true
+    slug: "{{slug}}"
+    extension: "yaml"
+    format: "yaml"
+    fields:
+      - { label: "Nume", name: "name", widget: "string" }
+      - { label: "Logo", name: "image", widget: "image" }
+      - { label: "Ordine", name: "order", widget: "number" }
+
+  - name: "settings"
+    label: "Setări Site"
+    files:
+      - label: "Setări Generale"
+        name: "general"
+        file: "LAB4/src/data/settings.json"
+        fields:
+          - { label: "Nume Site", name: "siteName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Titlu", name: "title", widget: "string" }
+              - { label: "Descriere", name: "description", widget: "text" }
+              - { label: "Buton Principal", name: "ctaPrimary", widget: "string" }
+              - { label: "Buton Secundar", name: "ctaSecondary", widget: "string" }
+              - label: "Elemente de încredere"
+                name: "trustItems"
+                widget: "list"
+                field: { label: "Element", name: "item", widget: "string" }
+          - label: "Statistici"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Număr", name: "number", widget: "string" }
+              - { label: "Etichetă", name: "label", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Telefoane", name: "phones", widget: "list", field: { label: "Telefon", name: "phone", widget: "string" } }
+              - { label: "Telefoane afișate", name: "phonesDisplay", widget: "list", field: { label: "Display", name: "display", widget: "string" } }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Banner mobil", name: "mobileBanner", widget: "string" }
+          - label: "Social"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string" }
+              - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Viber", name: "viber", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Descriere", name: "description", widget: "text" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+          - label: "Secțiune Recenzii"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - { label: "Titlu", name: "title", widget: "string" }
+              - { label: "Subtitlu", name: "subtitle", widget: "string" }
+          - label: "Secțiune Servicii"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Titlu", name: "title", widget: "string" }
+              - { label: "Subtitlu", name: "subtitle", widget: "string" }
+          - label: "Secțiune Parteneri"
+            name: "partners"
+            widget: "object"
+            fields:
+              - { label: "Titlu", name: "title", widget: "string" }
+          - label: "Mascotă"
+            name: "mascot"
+            widget: "object"
+            fields:
+              - { label: "Mesaj bulă", name: "bubble", widget: "string" }
