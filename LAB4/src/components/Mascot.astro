@@ -1,0 +1,23 @@
+---
+import settings from '../data/settings.json';
+---
+
+<div class="mascot-container" id="site-mascot" aria-label="Mascota Asigvital">
+  <div class="mascot-bubble">{settings.mascot.bubble}</div>
+  <div class="mascot-flip-shell" aria-hidden="true">
+    <svg class="mascot-svg" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <!-- Policy sheet -->
+      <rect x="34" y="24" width="72" height="92" rx="14" fill="#ffffff" stroke="#2f80ed" stroke-width="4"/>
+      <rect x="44" y="42" width="50" height="6" rx="3" fill="#cfe5ff"/>
+      <rect x="44" y="55" width="44" height="6" rx="3" fill="#cfe5ff"/>
+      <rect x="44" y="68" width="36" height="6" rx="3" fill="#cfe5ff"/>
+      <!-- Insurance shield badge -->
+      <path d="M97 70 L113 77 L113 94 C113 106 103 116 97 120 C91 116 81 106 81 94 L81 77 Z" fill="#2f80ed"/>
+      <path d="M97 84 L92 89 L95 92 L97 90 L102 85 L100 83 Z" fill="#ffffff"/>
+      <!-- Friendly face -->
+      <circle cx="58" cy="84" r="3" fill="#2f80ed"/>
+      <circle cx="72" cy="84" r="3" fill="#2f80ed"/>
+      <path d="M56 93 Q65 101 74 93" stroke="#2f80ed" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
