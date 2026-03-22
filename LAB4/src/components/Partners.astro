@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import settings from '../data/settings.json';
+
+const partners = (await getCollection('partners')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="partners section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{settings.partners.title}</h2>
+    </div>
+    <div class="partners-grid">
+      {partners.map((partner) => (
+        <div class="partner-item">
+          <img src={partner.data.image} alt={partner.data.name} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
