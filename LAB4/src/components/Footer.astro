@@ -1,0 +1,40 @@
+---
+import settings from '../data/settings.json';
+
+const { footer, contact, social, siteName } = settings;
+---
+
+<footer id="contact" class="footer">
+  <div class="container footer-container">
+    <div class="footer-info">
+      <h3 class="footer-logo">{siteName}</h3>
+      <p class="footer-desc">{footer.description}</p>
+    </div>
+    <div class="footer-contact">
+      <h4 class="footer-heading">Contactează-ne</h4>
+      {contact.phones.map((phone: string, i: number) => (
+        <p>📞 <a href={`tel:${phone}`}>{contact.phonesDisplay[i]}</a></p>
+      ))}
+      <p>✉️ <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+    </div>
+    <div class="footer-social">
+      <h4 class="footer-heading">Rețele Sociale</h4>
+      <div class="social-links">
+        <a href={social.facebook} target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href={social.viber} target="_blank" rel="noopener noreferrer" class="social-icon viber" title="Viber">
+          <i class="fa-brands fa-viber"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>{footer.copyright}</p>
+    </div>
+  </div>
+</footer>

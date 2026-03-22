@@ -1,0 +1,16 @@
+---
+import settings from '../data/settings.json';
+---
+
+<section id="despre" class="stats section">
+  <div class="container">
+    <div class="stats-grid">
+      {settings.stats.map((stat: { number: string; label: string }) => (
+        <div class="stat-item">
+          <div class="stat-number">{stat.number}</div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
