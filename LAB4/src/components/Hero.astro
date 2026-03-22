@@ -1,0 +1,27 @@
+---
+import settings from '../data/settings.json';
+
+const { hero, contact } = settings;
+---
+
+<section id="acasa" class="hero section">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="badge">{hero.badge}</span>
+      <h1 class="hero-title">{hero.title}</h1>
+      <p class="hero-text">{hero.description}</p>
+      <div class="hero-actions">
+        <a href={`mailto:${contact.email}`} class="btn btn-primary btn-large">{hero.ctaPrimary}</a>
+        <a href={`tel:${contact.phones[0]}`} class="btn btn-secondary btn-large">{hero.ctaSecondary}</a>
+      </div>
+      <div class="hero-trust">
+        {hero.trustItems.map((item: string) => (
+          <span>✓ {item}</span>
+        ))}
+      </div>
+    </div>
+    <div class="hero-lottie">
+      <lottie-player src="/Family Insurance.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+  </div>
+</section>
