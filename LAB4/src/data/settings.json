@@ -1,0 +1,49 @@
+{
+  "siteName": "Asigvital",
+  "tagline": "Siguranță cu stil",
+  "hero": {
+    "badge": "Siguranță cu stil",
+    "title": "Asigurări care reflectă calitatea vieții tale.",
+    "description": "Asigură-ți viitorul cu Asigvital - partenerul tău de încredere pe piața asigurărilor din Moldova. Protecție și siguranță pentru fiecare pas al drumului tău!",
+    "ctaPrimary": "Solicită o ofertă gratuită",
+    "ctaSecondary": "Sună acum",
+    "trustItems": [
+      "Peste 17 ani de experiență",
+      "Suport 24/7"
+    ]
+  },
+  "stats": [
+    { "number": "17", "label": "Ani pe piața Moldovei" },
+    { "number": "30,000+", "label": "Clienți mulțumiți" },
+    { "number": "24/7", "label": "Suport garantat" }
+  ],
+  "contact": {
+    "phones": ["+37379516908", "+37369147500"],
+    "phonesDisplay": ["079 516 908", "069 147 500"],
+    "email": "asigvitalmoldova@gmail.com",
+    "mobileBanner": "📱 Sună-ne acum pentru o evaluare rapidă direct de pe telefon!"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100039724677250",
+    "whatsapp": "https://wa.me/+37379516908",
+    "viber": "viber://chat?number=+37379516908"
+  },
+  "footer": {
+    "description": "Partenerul tău de încredere pe piața asigurărilor din Moldova. Oferim protecție și siguranță pentru fiecare pas al drumului tău.",
+    "copyright": "© 2026 BAR Asigvital SRL. Toate drepturile rezervate."
+  },
+  "testimonials": {
+    "title": "Ce spun clienții noștri",
+    "subtitle": "Peste 30,000 de moldoveni au ales siguranța alături de noi"
+  },
+  "services": {
+    "title": "Serviciile Noastre",
+    "subtitle": "Alege asigurarea potrivită pentru tine și familia ta"
+  },
+  "partners": {
+    "title": "Parteneri"
+  },
+  "mascot": {
+    "bubble": "Salut! Eu sunt Poli, ghidul tău de asigurări. Hover pentru ofertă rapida."
+  }
+}
